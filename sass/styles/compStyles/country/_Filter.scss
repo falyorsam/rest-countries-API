@@ -1,0 +1,31 @@
+.filter-by {
+  padding: 0.5rem 1.25rem;
+}
+.filter-main {
+  background-color: #2b3743;
+  padding: 1rem;
+  display: flex;
+  gap: 4rem;
+  margin: 1rem;
+  margin-bottom: 0.35rem;
+  border-radius: 5px;
+  color: white;
+  width: fit-content;
+  font-weight: 300;
+  i {
+    font-size: 0.75rem;
+  }
+}
+.filter {
+  width: fit-content;
+}
+.filters {
+  padding: 1rem 0;
+  padding-bottom: 0.25rem;
+  background-color: #2b3743;
+  color: white;
+  font-weight: 300;
+  margin: 1rem;
+  margin-top: 0;
+  border-radius: 5px;
+}

@@ -1,0 +1,109 @@
+.country-container {
+  .borderText {
+    font-weight: 800;
+  }
+  color: #fff;
+  padding: 1.5rem 1.75rem;
+  .back-container {
+    padding: 1rem 0;
+    .back {
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: fit-content;
+      padding: 0.35rem 1.5rem;
+      background-color: #2b3743;
+      color: white;
+      box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.415);
+      -webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.618);
+      -moz-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.522);
+      .back-text {
+        font-weight: 300;
+      }
+    }
+  }
+  .oneCountryImg {
+    padding: 2rem 0;
+  }
+  .OneCountryInformation {
+    .oneCountryName {
+      font-weight: 800;
+      font-size: 1.4rem;
+      padding-bottom: 1.5rem;
+    }
+
+    .InfoText {
+      font-size: 0.9rem;
+      padding: 0.5rem 0;
+      display: flex;
+      font-weight: 800;
+      gap: 0.3rem;
+      span {
+        font-weight: 600;
+        color: #ffffffb5;
+        display: flex;
+        gap: 0.25rem;
+      }
+    }
+    .pd-t {
+      padding-top: 2rem;
+    }
+    .pd-b {
+      padding-bottom: 2rem;
+    }
+    .borderText {
+      padding-bottom: 1.5rem;
+    }
+  }
+  .gridIt {
+    display: grid;
+    gap: 1rem 0;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    .borderCountry {
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 95px;
+      padding: 0.35rem 1.5rem;
+      background-color: #2b3743;
+      color: #f0f8f9c3;
+      box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.415);
+      -webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.618);
+      -moz-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.522);
+      font-weight: 300;
+      font-size: 0.75rem;
+    }
+  }
+}
+.dark-app {
+  .country-container {
+    color: black !important;
+    span {
+      color: rgb(0, 0, 0) !important;
+    }
+  }
+  .back {
+    background-color: #ffffff !important;
+    color: black !important;
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.189) !important;
+    -webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.26) !important;
+    -moz-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.197) !important;
+  }
+  .borderText {
+    font-weight: 800;
+  }
+  .gridIt {
+    .borderCountry {
+      background-color: #ffffff !important;
+      color: black !important;
+      box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.189) !important;
+      -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.26) !important;
+      -moz-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.197) !important;
+    }
+  }
+}

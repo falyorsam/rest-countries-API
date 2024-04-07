@@ -1,0 +1,25 @@
+.nav {
+  background-color: #2b3743;
+  color: #fffffb;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 0.75rem;
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.5);
+  .NavText {
+    font-weight: 800;
+  }
+  .DarkMode {
+    display: flex;
+    gap: 0.5rem;
+    font-weight: 600;
+  }
+}
+.dark-nav {
+  color: #161719;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.122);
+  -webkit-box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.122);
+  -moz-box-shadow: 0px 1px 1px 1pxrgba (0, 0, 0, 0.122);
+}
