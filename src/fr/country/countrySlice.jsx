@@ -80,6 +80,13 @@ const initialState = {
   loading: false,
   error: null,
   darkMode: true,
+  backUp: [],
+  regionName: { name: "Filter By Region" },
+  regionListShow: {
+    filterMain: { display: "none" },
+    arrow: `fa-solid fa-chevron-up`,
+  },
+  problemNotFound: "",
 };
 export const getCountriesItem = createAsyncThunk(
   "countries/getCountriesItem",
@@ -89,6 +96,14 @@ export const getCountriesItem = createAsyncThunk(
       .catch((err) => console.log(err));
   }
 );
+const block = {
+  filterMain: { display: "block" },
+  arrow: `fa-solid fa-chevron-down`,
+};
+const none = {
+  filterMain: { display: "none" },
+  arrow: `fa-solid fa-chevron-up`,
+};
 const CountrySlice = createSlice({
   name: "country",
   initialState,
@@ -97,8 +112,24 @@ const CountrySlice = createSlice({
       state.darkMode = !state.darkMode;
     },
     filterByRegion: (state, { payload }) => {
-      // state.countries = payload;
-      state.countries = payload;
+      state.countries = [...state.backUp];
+
+      state.countries =
+        Array.isArray(payload.data) && payload.data.length > 0
+          ? payload.data
+          : state.countries;
+      state.regionName.name = payload.name;
+    },
+    regionSelect: (state) => {
+      if (JSON.stringify(state.regionListShow) === JSON.stringify(block)) {
+        state.regionListShow = none;
+      } else {
+        state.regionListShow = block;
+      }
+    },
+    searchOneCountry: (state, { payload }) => {
+      state.countries = payload.data;
+      state.problemNotFound = payload.notFound;
     },
   },
   extraReducers: {
@@ -109,6 +140,7 @@ const CountrySlice = createSlice({
       state.loading = false;
 
       state.countries = action.payload;
+      state.backUp = action.payload;
     },
     [getCountriesItem.rejected]: (state) => {
       state.loading = false;
@@ -116,6 +148,12 @@ const CountrySlice = createSlice({
   },
 });
 
-export const { enableDarkMode, filterByRegion, reAddCountry } =
-  CountrySlice.actions;
+export const {
+  enableDarkMode,
+  filterByRegion,
+  reAddCountry,
+  backUpRegions,
+  regionSelect,
+  searchOneCountry,
+} = CountrySlice.actions;
 export default CountrySlice.reducer;

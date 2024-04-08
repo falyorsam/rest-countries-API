@@ -9,6 +9,7 @@ import Nav from "./comp/countrys/Nav";
 import CountryCont from "./comp/oneCountry/CountryCont";
 import Search from "./comp/countrys/Search";
 import Filter from "./comp/countrys/Filter";
+import CountriesContainer from "./comp/countrys/CountiresContainer";
 function App() {
   const { countries, loading, error, darkMode } = useSelector(
     (state) => state.country
@@ -19,9 +20,18 @@ function App() {
     dispatch(getCountriesItem());
   }, []);
   if (loading) {
+    if (darkMode === false) {
+      return (
+        <>
+          <div className="loading">
+            <h1>Loading...</h1>
+          </div>
+        </>
+      );
+    }
     return (
       <>
-        <div className="loading">
+        <div className="loading  dark-loading">
           <h1>Loading...</h1>
         </div>
       </>
@@ -33,6 +43,7 @@ function App() {
         <Nav />
         <Search />
         <Filter />
+        <CountriesContainer />
         {/* <CountryCont /> */}
       </div>
     );
@@ -42,6 +53,7 @@ function App() {
       <Nav />
       <Search />
       <Filter />
+      <CountriesContainer />
       {/* <CountryCont /> */}
     </div>
   );

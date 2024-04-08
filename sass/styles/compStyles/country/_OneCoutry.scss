@@ -1,1 +1,42 @@
-
+.one-country-block {
+  width: 320px;
+  .info-one {
+    padding: 2rem 1rem;
+    .one-country-text {
+      font-weight: 800;
+      font-size: 1.4rem;
+      padding-bottom: 1rem;
+    }
+    .one-country-info {
+      padding: 0.45rem 0;
+      font-weight: 600;
+      span {
+        font-weight: 300;
+      }
+    }
+  }
+  color: #fffffe;
+  background-color: #2b3743;
+  border-radius: 10px;
+  img {
+    border-radius: 10px 10px 0 0;
+  }
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.226);
+  -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.232);
+  -moz-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.284);
+}
+.dark-app {
+  .one-country-block {
+    color: #000;
+    background-color: #ffffff;
+    .one-country-info {
+      font-weight: 800;
+      span {
+        font-weight: 600;
+      }
+    }
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.226);
+    -webkit-box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.232);
+    -moz-box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.284);
+  }
+}

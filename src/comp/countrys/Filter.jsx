@@ -5,34 +5,58 @@ import {
   filterByRegion,
   getCountriesItem,
   reAddCountry,
+  backUpRegions,
+  regionSelect,
 } from "../../fr/country/countrySlice";
 const Filter = () => {
   const dispatch = useDispatch();
-  const { countries, loading, error, darkMode } = useSelector(
-    (state) => state.country
-  );
-  const africa = countries.filter((country) => country.region === "Africa");
-  const america = countries.filter((country) => country.region === "Americas");
-  const asia = countries.filter((country) => country.region === "Asia");
-  const europe = countries.filter((country) => country.region === "Europe");
-  const oceania = countries.filter((country) => country.region === "Oceania");
-
+  const {
+    countries,
+    loading,
+    error,
+    darkMode,
+    backUp,
+    regionListShow,
+    regionName,
+  } = useSelector((state) => state.country);
+  const africa = {
+    data: backUp.filter((country) => country.region === "Africa"),
+    name: "Africa",
+  };
+  const america = {
+    data: backUp.filter((country) => country.region === "Americas"),
+    name: "America",
+  };
+  const asia = {
+    data: backUp.filter((country) => country.region === "Asia"),
+    name: "Asia",
+  };
+  const europe = {
+    data: backUp.filter((country) => country.region === "Europe"),
+    name: "Europe",
+  };
+  const oceania = {
+    data: backUp.filter((country) => country.region === "Oceania"),
+    name: "Oceania",
+  };
   return (
     <div className="filter">
-      <div className="filter-main">
-        <div className="filter-main-text">Filter by Region</div>
+      <div
+        onClick={() => {
+          dispatch(regionSelect());
+        }}
+        className="filter-main"
+      >
+        <div className="filter-main-text">{regionName.name}</div>
         <div className="icon">
-          <i className="fa-solid fa-chevron-down"></i>
+          <i className={regionListShow.arrow}></i>
         </div>
       </div>
-      <div className="filters">
+      <div style={regionListShow.filterMain} className="filters">
         <div
           onClick={() => {
-            if (countries.length === 250) {
-              dispatch(filterByRegion(africa));
-            } else {
-              dispatch(reAddCountry());
-            }
+            dispatch(filterByRegion(africa));
+            dispatch(regionSelect());
           }}
           className="filter-by"
         >
@@ -40,11 +64,8 @@ const Filter = () => {
         </div>
         <div
           onClick={() => {
-            if (countries.length === 250) {
-              dispatch(filterByRegion(america));
-            } else {
-              dispatch(reAddCountry());
-            }
+            dispatch(filterByRegion(america));
+            dispatch(regionSelect());
           }}
           className="filter-by"
         >
@@ -52,11 +73,8 @@ const Filter = () => {
         </div>
         <div
           onClick={() => {
-            if (countries.length === 250) {
-              dispatch(filterByRegion(asia));
-            } else {
-              dispatch(reAddCountry());
-            }
+            dispatch(filterByRegion(asia));
+            dispatch(regionSelect());
           }}
           className="filter-by"
         >
@@ -64,11 +82,8 @@ const Filter = () => {
         </div>
         <div
           onClick={() => {
-            if (countries.length === 250) {
-              dispatch(filterByRegion(europe));
-            } else {
-              dispatch(reAddCountry());
-            }
+            dispatch(filterByRegion(europe));
+            dispatch(regionSelect());
           }}
           className="filter-by"
         >
@@ -76,11 +91,8 @@ const Filter = () => {
         </div>
         <div
           onClick={() => {
-            if (countries.length === 250) {
-              dispatch(filterByRegion(oceania));
-            } else {
-              dispatch(reAddCountry());
-            }
+            dispatch(filterByRegion(oceania));
+            dispatch(regionSelect());
           }}
           className="filter-by"
         >

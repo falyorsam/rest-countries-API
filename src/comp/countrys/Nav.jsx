@@ -11,7 +11,21 @@ const Nav = () => {
     return (
       <nav className="nav dark-nav">
         <div className="NavText">where in the world?</div>
-        <div onClick={() => dispatch(enableDarkMode())} className="DarkMode">
+        <div
+          onClick={(e) => {
+            const html =
+              e.currentTarget.parentElement.parentElement.parentElement
+                .parentElement.parentElement;
+            if (Array.from(html.classList).join(" ") === "dark-html") {
+              html.classList.remove("dark-html");
+            } else {
+              html.classList.add("dark-html");
+            }
+
+            dispatch(enableDarkMode());
+          }}
+          className="DarkMode"
+        >
           <div className="iconNight">
             <i className="fa-regular fa-moon"></i>
           </div>
@@ -23,7 +37,21 @@ const Nav = () => {
   return (
     <nav className="nav">
       <div className="NavText">where in the world?</div>
-      <div onClick={() => dispatch(enableDarkMode())} className="DarkMode">
+      <div
+        onClick={(e) => {
+          const html =
+            e.currentTarget.parentElement.parentElement.parentElement
+              .parentElement.parentElement;
+          if (Array.from(html.classList).join(" ") === "dark-html") {
+            html.classList.remove("dark-html");
+          } else {
+            html.classList.add("dark-html");
+          }
+
+          dispatch(enableDarkMode());
+        }}
+        className="DarkMode"
+      >
         <div className="iconNight">
           <i className="fa-solid fa-moon"></i>
         </div>

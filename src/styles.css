@@ -18,6 +18,24 @@ body {
   height: 100vh;
 }
 
+.countries-main-page .center-one-country {
+  display: flex;
+  justify-content: center;
+  margin: 3rem auto;
+  padding: 0;
+}
+
+.problem {
+  color: rgba(255, 255, 255, 0.641);
+  text-align: center;
+  padding-top: 5rem;
+}
+
+.dark-app .problem {
+  color: rgba(0, 0, 0, 0.708);
+  font-weight: 600;
+}
+
 .filter-by {
   padding: 0.5rem 1.25rem;
 }
@@ -26,31 +44,58 @@ body {
   background-color: #2b3743;
   padding: 1rem;
   display: flex;
-  gap: 4rem;
+  justify-content: space-between;
   margin: 1rem;
+  margin-left: 1.5rem;
   margin-bottom: 0.35rem;
   border-radius: 5px;
-  color: white;
-  width: fit-content;
-  font-weight: 300;
+  width: 225px;
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.226);
+  -webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.232);
+  -moz-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.284);
 }
 .filter-main i {
   font-size: 0.75rem;
 }
 
 .filter {
+  position: relative;
+  color: white;
   width: fit-content;
+  font-weight: 300;
+  font-weight: 300;
 }
 
 .filters {
+  position: absolute;
+  width: 225px;
+  right: 0px;
   padding: 1rem 0;
   padding-bottom: 0.25rem;
   background-color: #2b3743;
-  color: white;
-  font-weight: 300;
   margin: 1rem;
   margin-top: 0;
   border-radius: 5px;
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.226);
+  -webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.232);
+  -moz-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.284);
+}
+
+.dark-app .filter {
+  font-weight: 600;
+  color: #000;
+}
+.dark-app .filter-main {
+  background-color: white;
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.226);
+  -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.232);
+  -moz-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.284);
+}
+.dark-app .filters {
+  background-color: white;
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.226);
+  -webkit-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.232);
+  -moz-box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.284);
 }
 
 .nav {
@@ -80,6 +125,48 @@ body {
   -moz-box-shadow: 0px 1px 1px 1pxrgba 0, 0, 0, 0.122;
 }
 
+.one-country-block {
+  width: 320px;
+  color: #fffffe;
+  background-color: #2b3743;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.226);
+  -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.232);
+  -moz-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.284);
+}
+.one-country-block .info-one {
+  padding: 2rem 1rem;
+}
+.one-country-block .info-one .one-country-text {
+  font-weight: 800;
+  font-size: 1.4rem;
+  padding-bottom: 1rem;
+}
+.one-country-block .info-one .one-country-info {
+  padding: 0.45rem 0;
+  font-weight: 600;
+}
+.one-country-block .info-one .one-country-info span {
+  font-weight: 300;
+}
+.one-country-block img {
+  border-radius: 10px 10px 0 0;
+}
+
+.dark-app .one-country-block {
+  color: #000;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.226);
+  -webkit-box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.232);
+  -moz-box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.284);
+}
+.dark-app .one-country-block .one-country-info {
+  font-weight: 800;
+}
+.dark-app .one-country-block .one-country-info span {
+  font-weight: 600;
+}
+
 .search-bar {
   padding: 1.5rem;
 }
@@ -97,6 +184,7 @@ body {
   outline: none;
 }
 .search-bar input {
+  font-weight: 600;
   color: rgba(255, 255, 255, 0.607);
   background-color: #2b3743;
   border: none;
@@ -111,6 +199,27 @@ body {
 
 .abs {
   position: relative;
+}
+
+.dark-app .search-icon i {
+  color: #b0b0b0;
+}
+.dark-app input {
+  color: rgba(0, 0, 0, 0.545);
+  font-weight: 600;
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.226);
+  -webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.232);
+  -moz-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.284);
+  background-color: #ffffff;
+}
+
+html {
+  height: fit-content;
+  background-color: #202d36;
+}
+
+.dark-html {
+  background-color: #fafafa;
 }
 
 .country-container {
@@ -224,6 +333,11 @@ body {
   color: hsla(0, 0%, 0%, 0.844);
   font-weight: 800;
   height: 100vh;
+}
+
+.dark-loading {
+  color: white;
+  background-color: #202d36;
 }
 
 /*# sourceMappingURL=styles.css.map */
