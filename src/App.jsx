@@ -49,8 +49,10 @@ function App() {
         ) : (
           <>
             <Nav />
-            <Search />
-            <Filter />
+            <div className="for-1440px">
+              <Search />
+              <Filter />
+            </div>
             <CountriesContainer />
           </>
         )}
@@ -67,8 +69,10 @@ function App() {
       ) : (
         <>
           <Nav />
-          <Search />
-          <Filter />
+          <div className="for-1440px">
+            <Search />
+            <Filter />
+          </div>
           <CountriesContainer />
         </>
       )}
