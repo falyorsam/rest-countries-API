@@ -249,9 +249,6 @@ export const getCountriesItem = createAsyncThunk(
   }
 );
 ```
-
-
-
 - Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/sloyakodav)
 
 ## Acknowledgments
