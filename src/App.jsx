@@ -11,7 +11,7 @@ import Search from "./comp/countrys/Search";
 import Filter from "./comp/countrys/Filter";
 import CountriesContainer from "./comp/countrys/CountiresContainer";
 function App() {
-  const { countries, loading, error, darkMode } = useSelector(
+  const { countries, loading, error, darkMode, showCountry } = useSelector(
     (state) => state.country
   );
 
@@ -37,24 +37,41 @@ function App() {
       </>
     );
   }
+
   if (darkMode === false) {
     return (
       <div className="App dark-app">
-        <Nav />
-        <Search />
-        <Filter />
-        <CountriesContainer />
-        {/* <CountryCont /> */}
+        {showCountry ? (
+          <>
+            <Nav />
+            <CountryCont />
+          </>
+        ) : (
+          <>
+            <Nav />
+            <Search />
+            <Filter />
+            <CountriesContainer />
+          </>
+        )}
       </div>
     );
   }
   return (
     <div className="App">
-      <Nav />
-      <Search />
-      <Filter />
-      <CountriesContainer />
-      {/* <CountryCont /> */}
+      {showCountry ? (
+        <>
+          <Nav />
+          <CountryCont />
+        </>
+      ) : (
+        <>
+          <Nav />
+          <Search />
+          <Filter />
+          <CountriesContainer />
+        </>
+      )}
     </div>
   );
 }

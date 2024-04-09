@@ -87,6 +87,7 @@ const initialState = {
     arrow: `fa-solid fa-chevron-up`,
   },
   problemNotFound: "",
+  showCountry: false,
 };
 export const getCountriesItem = createAsyncThunk(
   "countries/getCountriesItem",
@@ -131,6 +132,14 @@ const CountrySlice = createSlice({
       state.countries = payload.data;
       state.problemNotFound = payload.notFound;
     },
+    showOneCountry: (state, { payload }) => {
+      state.countries = payload;
+      state.showCountry = true;
+    },
+    BackOneCountry: (state) => {
+      state.showCountry = false;
+      state.countries = state.backUp;
+    },
   },
   extraReducers: {
     [getCountriesItem.pending]: (state) => {
@@ -155,5 +164,7 @@ export const {
   backUpRegions,
   regionSelect,
   searchOneCountry,
+  showOneCountry,
+  BackOneCountry,
 } = CountrySlice.actions;
 export default CountrySlice.reducer;

@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 const Country = () => {
   const { countries } = useSelector((state) => state.country);
+  console.log(countries[0]);
   const oneC = countries[0];
   // console.log(countries[0].borders[0]);
   return (
@@ -51,13 +52,15 @@ const Country = () => {
         <div className="border">
           <div className="borderText">Border Countries:</div>
           <div className="gridIt">
-            {countries[0].borders.map((e) => {
-              return (
+            {countries[0].borders ? (
+              countries[0].borders.map((e) => (
                 <div key={e} className="borderCountry">
                   {e}
                 </div>
-              );
-            })}
+              ))
+            ) : (
+              <div className="borderCountry noOne">no country</div>
+            )}
           </div>
         </div>
       </div>
